@@ -42,5 +42,5 @@ docker run \
     --network host \
     --privileged \
     --security-opt seccomp=unconfined \
-    argnctu/ivp-python:latest \
+    argnctu/pyivp:latest \
     $BASH_OPTION

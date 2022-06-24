@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build --rm -t argnctu/ivp-python .
+docker build --rm -t argnctu/pyivp .
