@@ -1,0 +1,3 @@
+[submodule "svn-mirror"]
+	path = svn-mirror
+	url = git@github.com:ARG-NCTU/svn-mirror.git
