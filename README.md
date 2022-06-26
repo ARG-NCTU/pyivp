@@ -24,6 +24,10 @@ cd ~/pyivp
 source docker_run.sh
 ```
 
+Or 
+```
+source docker_join.sh
+```
 Note that we should compile and run in Docker.
 We use a root account in order to access driver and other hardware.
 Therefore, everything edited in container will belong to root.
@@ -35,16 +39,39 @@ We suggest to edit code in host.
 
 This is an example based on 2.680 CPP Labs (lab05 and lab06)
 
-### 
+### Compile and Install Library
 
+In Docker,
 ```
-source docker_run.sh
 cd ~/pyivp/examples/cpplabs
 make
 ```
 
-Note that we will compile the lib_geometry and install it to /usr/local/lib, 
-which is inside container. (so no worries to mess up your own system)
+Note that 
+* We will compile the lib_geometry and install it to /usr/local/lib, which is inside container. (so no worries to mess up your own system)
+* We also run a python code to test the installed library in python (pytest/test_plus.py)
+
+<img width="599" alt="image" src="https://user-images.githubusercontent.com/16217256/175802286-c1e5174b-0f45-4eed-98bb-eaafcca12bb7.png">
+
+### nbdev
+
+The pyivp repo has been configured to a [nbdev](https://nbdev.fast.ai/) repo. 
+Quote from nbdev
+```
+nbdev is a library that allows you to develop a python library in Jupyter Notebooks, putting all your code, tests and documentation in one place. That is: you now have a true literate programming environment, as envisioned by Donald Knuth back in 1983!
+```
+We will use nbdev to develop "high-level" API based on IvP and test all ivp libraries in Jupyter Notebook.
+
+After you compile and install the library.
+```
+source Docker/colab_jupyter.sh
+```
+
+Open a browser, and enter the following
+```
+http://127.0.0.1:8888/tree
+```
+Now you could open and enjoy IvP in Jupyter Notebooks.
 
 
 ## XYPatternBlock
