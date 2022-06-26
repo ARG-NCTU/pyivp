@@ -12,6 +12,41 @@ We intented to use pybind11 to create
 
 For the use of well-established functions.
 
+## Environment and Installation
+
+We will use Docker to manage the dependencies, which should be minimal.
+Docker mounts the volumn ~/pyivp between the host and container.
+
+To get started:
+```
+git clone git@github.com:ARG-NCTU/pyivp.git
+cd ~/pyivp
+source docker_run.sh
+```
+
+Note that we should compile and run in Docker.
+We use a root account in order to access driver and other hardware.
+Therefore, everything edited in container will belong to root.
+
+We suggest to edit code in host.
+
+
+## cpplabs examples
+
+This is an example based on 2.680 CPP Labs (lab05 and lab06)
+
+### 
+
+```
+source docker_run.sh
+cd ~/pyivp/examples/cpplabs
+make
+```
+
+Note that we will compile the lib_geometry and install it to /usr/local/lib, 
+which is inside container. (so no worries to mess up your own system)
+
+
 ## XYPatternBlock
 
 <img width="585" alt="image" src="https://user-images.githubusercontent.com/16217256/171214864-ec5ffca7-fe53-4dbb-ae7d-e058462d8606.png">
