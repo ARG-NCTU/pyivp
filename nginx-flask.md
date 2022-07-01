@@ -28,7 +28,7 @@ If your workstation has a static IP, you could do "http://[IP]/test.html/"
 
 To run Nginx and Flask together
 ```
-source Docker/nginx-flask.sh
+source source flask/nginx-flask-hello.sh
 ```
 
 Open a browser and enter: "http://127.0.0.1:5000/"
