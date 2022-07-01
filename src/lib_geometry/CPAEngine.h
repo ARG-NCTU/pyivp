@@ -56,10 +56,10 @@ public:
   // ----------------------------------------------------------
   bool   crossesStern(double osh, double osv) const;
   double crossesSternDist(double osh, double osv) const;
-  bool   crossesSternDist(double osh, double osv, double& xdist) const;
+  bool   crossesSternDistBool(double osh, double osv, double& xdist) const;
   bool   crossesBow(double osh, double osv) const;
   double crossesBowDist(double osh, double osv) const;
-  bool   crossesBowDist(double osh, double osv, double& xdist) const;
+  bool   crossesBowDistBool(double osh, double osv, double& xdist) const;
   bool   crossesBowOrStern(double osh, double osv) const;
 
   // ----------------------------------------------------------
@@ -67,10 +67,10 @@ public:
   // ----------------------------------------------------------
   bool   passesPort(double osh, double osv) const;
   double passesPortDist(double osh, double osv) const;
-  bool   passesPortDist(double osh, double osv, double& xdist) const;
+  bool   passesPortDistBool(double osh, double osv, double& xdist) const;
   bool   passesStar(double osh, double osv) const;
   double passesStarDist(double osh, double osv) const;
-  bool   passesStarDist(double osh, double osv, double& xdist) const;
+  bool   passesStarDistBool(double osh, double osv, double& xdist) const;
   bool   passesPortOrStar(double osh, double osv) const;
   
   bool   turnsRight(double old_osh, double new_osh) const;

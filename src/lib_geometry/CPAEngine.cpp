@@ -583,14 +583,14 @@ bool CPAEngine::crossesBow(double osCRS, double osSPD) const
 double CPAEngine::crossesBowDist(double osh, double osv) const
 {
   double dist;
-  crossesBowDist(osh, osv, dist);
+  crossesBowDistBool(osh, osv, dist);
   return(dist);
 }
 
 //----------------------------------------------------------------
 // Procedure: crossesBowDist
 
-bool CPAEngine::crossesBowDist(double osh, double osv, double& xdist) const
+bool CPAEngine::crossesBowDistBool(double osh, double osv, double& xdist) const
 {
   // Sanity check 1: If on the bowline, return the current range
   if(m_stat_os_on_bowline) {
@@ -684,7 +684,7 @@ bool CPAEngine::crossesStern(double osh, double osv) const
 double CPAEngine::crossesSternDist(double osh, double osv) const
 {
   double xdist;
-  crossesSternDist(osh, osv, xdist);
+  crossesSternDistBool(osh, osv, xdist);
   return(xdist);
 }
 
@@ -695,7 +695,7 @@ double CPAEngine::crossesSternDist(double osh, double osv) const
 //            contact on its stern. And if so, at what distance when
 //            it crosses?
 
-bool CPAEngine::crossesSternDist(double osh, double osv, double& xdist) const
+bool CPAEngine::crossesSternDistBool(double osh, double osv, double& xdist) const
 {
   // Sanity check 1: If on the sternline, return the current range
   if(m_stat_os_on_sternline) {
@@ -873,14 +873,14 @@ bool CPAEngine::passesPort(double osh, double osv) const
 double CPAEngine::passesPortDist(double osh, double osv) const
 {
   double dist;
-  passesPortDist(osh, osv, dist);
+  passesPortDistBool(osh, osv, dist);
   return(dist);
 }
 
 //----------------------------------------------------------------
 // Procedure: passesPortDist
 
-bool CPAEngine::passesPortDist(double osh, double osv, double& xdist) const
+bool CPAEngine::passesPortDistBool(double osh, double osv, double& xdist) const
 {
   // Until shown otherwise, xdist is -1, meaning os does not pass cn
   xdist = -1;
@@ -976,14 +976,14 @@ bool CPAEngine::passesStar(double osh, double osv) const
 double CPAEngine::passesStarDist(double osh, double osv) const
 {
   double dist;
-  passesStarDist(osh, osv, dist);
+  passesStarDistBool(osh, osv, dist);
   return(dist);
 }
 
 //----------------------------------------------------------------
 // Procedure: passesStarDist
 
-bool CPAEngine::passesStarDist(double osh, double osv, double& xdist) const
+bool CPAEngine::passesStarDistBool(double osh, double osv, double& xdist) const
 {
   // Until shown otherwise, xdist is -1, meaning os does not pass cn
   xdist = -1;
