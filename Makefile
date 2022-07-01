@@ -13,6 +13,7 @@ tests:
 
 pypi: dist
 	twine upload --skip-existing --repository pypi dist/*
+#this command means that will do dist first then pypi
 
 dist: clean
 	python3 setup.py sdist bdist_wheel
