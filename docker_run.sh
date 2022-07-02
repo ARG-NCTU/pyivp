@@ -38,7 +38,7 @@ docker run \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
     -w "/home/arg/pyivp" \
     --user "root:root" \
-    --name oop \
+    --name pyivp \
     --network host \
     --privileged \
     --security-opt seccomp=unconfined \
