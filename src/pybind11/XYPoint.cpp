@@ -11,7 +11,7 @@ void init_XYPoint(py::module &m) {
     .def(py::init())
     .def(py::init<double, double>())
     .def("clear", &XYPoint::clear)
-    .def("set_vertex", &XYPoint::set_vertex)
+    .def("set_vertex", &XYPoint::set_vertex, py::arg("x"), py::arg("y"), py::arg("z")=0)
     .def("set_vx", &XYPoint::set_vx)
     .def("set_vy", &XYPoint::set_vy)
     .def("set_vz", &XYPoint::set_vz)
