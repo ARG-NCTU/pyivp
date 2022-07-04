@@ -16,3 +16,4 @@ tags.lock
 *.out
 
 .ipynb_checkpoints/
+flask/__pycache__/
