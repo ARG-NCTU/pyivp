@@ -28,5 +28,5 @@ void init_XYPoint(py::module &m) {
     .def("z", &XYPoint::z)
     .def("valid", &XYPoint::valid)
     .def("projectPt", &XYPoint::projectPt,py::arg("XYPoint"),py::arg("ang"),py::arg("dist"))
-    .def("get_spec", &XYPoint::get_spec, py::arg("s")="",py::const_);
+    .def("get_spec", &XYPoint::get_spec, py::arg("s")="");
 }
