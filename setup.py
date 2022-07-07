@@ -7,8 +7,8 @@ this_dir = os.path.dirname(os.path.abspath(__file__))
 pyivp = Extension(
     name='pyivp',
     include_dirs=[
-        os.path.join(this_dir, 'src/lib_geometry', 'XYPoint.h'),
-        os.path.join(this_dir, 'src/lib_geometry', 'XYSegList.h')
+        os.path.join(this_dir, 'src/lib_geometry'),
+        os.path.join(this_dir, 'src/lib_mbutil')
     ],
     sources=[
         os.path.join(this_dir, 'src/pybind11', 'XYPoint.cpp'),

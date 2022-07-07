@@ -15,7 +15,7 @@ pypi: dist
 	twine upload --skip-existing --repository pypi dist/*
 #this command means that will do dist first then pypi
 
-dist: clean
+dist: build-ivp
 	python3 setup.py sdist bdist_wheel
 
 clean:
