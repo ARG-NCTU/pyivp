@@ -1,0 +1,13 @@
+CONTRIBUTING.md
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+/home/arg/pyivp/src/pybind11/XYPoint.cpp
+/home/arg/pyivp/src/pybind11/XYSegList.cpp
+pyivp.egg-info/PKG-INFO
+pyivp.egg-info/SOURCES.txt
+pyivp.egg-info/dependency_links.txt
+pyivp.egg-info/not-zip-safe
+pyivp.egg-info/top_level.txt
