@@ -12,9 +12,9 @@ tests:
 	cd src/pytest; python3 test_pattern_block.py
 
 pypi: dist
-	twine upload --skip-existing --repository pypi dist/*
-#this command means that will do dist first then pypi
-
+	#twine upload --skip-existing --repository pypi dist/*
+	#this command means that will do dist first then pypi
+	python3 -m twine upload --skip-existing --repository pypi dist/*.tar.gz
 dist: build-ivp
 	python3 setup.py sdist bdist_wheel
 

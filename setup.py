@@ -18,7 +18,7 @@ pyivp = Extension(
 
 setup(
     name='pyivp',
-    version='0.0.1',
+    version='0.0.2',
     author='ARG',
     description='pyivp module',
     long_description='using pybind11 to bind moosivp into python library',
