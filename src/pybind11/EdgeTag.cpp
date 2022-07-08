@@ -14,7 +14,7 @@ void init_EdgeTag(py::module &m) {
     .def("setTag",&EdgeTag::setTag,"setTag")
     .def("getIndex1",&EdgeTag::getIndex1,"getIndex1")
     .def("getTag",&EdgeTag::getTag,"getTag")
-    .def("getIndex2",&EdgeTag::setTag,"getIndex2")
+    .def("getIndex2",&EdgeTag::getIndex2,"getIndex2")
     .def("getSpec",&EdgeTag::getSpec,"getSpec")
     .def("setOnSpec",&EdgeTag::setOnSpec,"setOnSpec")
     .def("valid",&EdgeTag::valid,"valid")
