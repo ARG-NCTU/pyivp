@@ -8,6 +8,7 @@ void init_XYPoint(py::module &);
 void init_XYSegList(py::module &);
 void init_CPAEngine(py::module &);
 void init_EdgeTag(py::module &);
+void init_EdgeTagSet(py::module &);
 
 namespace ivp {
 
@@ -27,5 +28,6 @@ PYBIND11_MODULE(pyivp, m) {
     init_XYSegList(m);
     init_CPAEngine(m);
     init_EdgeTag(m);
+    init_EdgeTagSet(m);
 }
 }
