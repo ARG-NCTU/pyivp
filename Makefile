@@ -6,6 +6,7 @@ build-ivp:
 	make -C src
 	make -C src_unit_tests 
 	make -C src/pybind11 
+	nbdev_clean_nbs
 
 tests:
 	cd src_unit_tests; ./alltest.sh
