@@ -6,6 +6,7 @@ namespace py = pybind11;
 void init_XYPatternBlock(py::module &);
 void init_XYPoint(py::module &);
 void init_XYSegList(py::module &);
+void init_XYPolygon(py::module &);
 void init_CPAEngine(py::module &);
 void init_EdgeTag(py::module &);
 void init_EdgeTagSet(py::module &);
@@ -26,6 +27,7 @@ PYBIND11_MODULE(pyivp, m) {
     init_XYPatternBlock(m);
     init_XYPoint(m);
     init_XYSegList(m);
+    init_XYPolygon(m);
     init_CPAEngine(m);
     init_EdgeTag(m);
     init_EdgeTagSet(m);
