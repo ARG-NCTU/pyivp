@@ -6,6 +6,7 @@ namespace py = pybind11;
 void init_XYPatternBlock(py::module &);
 void init_XYPoint(py::module &);
 void init_XYSegList(py::module &);
+void init_XYPolygon(py::module &);
 
 namespace ivp {
 
@@ -24,5 +25,6 @@ PYBIND11_MODULE(pyivp, m) {
     init_XYPatternBlock(m);
     init_XYPoint(m);
     init_XYSegList(m);
+    init_XYPolygon(m);
 }
 }
