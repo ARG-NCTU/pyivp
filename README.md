@@ -19,7 +19,7 @@ Docker mounts the volumn ~/pyivp between the host and container.
 
 To get started:
 ```
-git clone git@github.com:ARG-NCTU/pyivp.git
+git clone --recursive git@github.com:ARG-NCTU/pyivp.git
 cd ~/pyivp
 source docker_run.sh
 ```
@@ -73,6 +73,10 @@ http://127.0.0.1:8888/tree
 ```
 Now you could open and enjoy IvP in Jupyter Notebooks.
 
+```
+nbdev_clean_nbs
+```
+Remember to run this command to clear notebooks
 
 ## XYPatternBlock
 

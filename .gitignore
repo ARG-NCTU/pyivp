@@ -2,6 +2,7 @@
 .DS_Store
 build/
 bin/
+dist/*
 
 # Swap
 [._]*.s[a-v][a-z]
@@ -16,3 +17,4 @@ tags.lock
 *.out
 
 .ipynb_checkpoints/
+flask/__pycache__/

@@ -7,6 +7,9 @@ void init_XYPatternBlock(py::module &);
 void init_XYPoint(py::module &);
 void init_XYSegList(py::module &);
 void init_XYPolygon(py::module &);
+void init_CPAEngine(py::module &);
+void init_EdgeTag(py::module &);
+void init_EdgeTagSet(py::module &);
 
 namespace ivp {
 
@@ -21,10 +24,12 @@ PYBIND11_MODULE(pyivp, m) {
     m.doc() = "pybind11 for cpp labs";
  
     m.def("python_test_plus", &cpp_test_plus, "plus x and y");
-    
     init_XYPatternBlock(m);
     init_XYPoint(m);
     init_XYSegList(m);
     init_XYPolygon(m);
+    init_CPAEngine(m);
+    init_EdgeTag(m);
+    init_EdgeTagSet(m);
 }
 }
