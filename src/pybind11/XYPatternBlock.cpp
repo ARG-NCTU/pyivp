@@ -10,8 +10,8 @@ void init_XYPatternBlock(py::module &m) {
     py::class_<XYPatternBlock>(m, "XYPatternBlock")
     .def(py::init())
     //Interface for setting parameters
-    .def("setParam", py::overload_cast<std::string, std::string>(&XYPatternBlock::setParam))
-    .def("setParam", py::overload_cast<std::string, double>(&XYPatternBlock::setParam))
+    .def("setParam", py::overload_cast<std::string, std::string>(&XYPatternBlock::setParam), " you can set 5 parameters : block_width, block_length, swath_width, angle, id_point \n\n input : string, string \n return : if parameters is set correctly -> True")
+    .def("setParam", py::overload_cast<std::string, double>(&XYPatternBlock::setParam)," you can set 4 parameters : block_width, block_length, swath_width, angle \n\n input : string, double \n return : if parameters is set correctly -> True")
     .def("addIDPoint", &XYPatternBlock::addIDPoint)
     .def("setCoreWidth", &XYPatternBlock::setCoreWidth, py::arg("v"))
     .def("setAutoDrop", &XYPatternBlock::setAutoDrop, py::arg("v"))
