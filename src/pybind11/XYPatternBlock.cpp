@@ -10,8 +10,8 @@ void init_XYPatternBlock(py::module &m) {
     py::class_<XYPatternBlock>(m, "XYPatternBlock")
     .def(py::init())
     //Interface for setting parameters
-    .def("setParam", py::overload_cast<std::string, std::string>(&XYPatternBlock::setParam), " you can set 5 parameters : block_width, block_length, swath_width, angle, id_point \n\n input : string, string \n return : if parameters is set correctly -> True")
-    .def("setParam", py::overload_cast<std::string, double>(&XYPatternBlock::setParam)," you can set 4 parameters : block_width, block_length, swath_width, angle \n\n input : string, double \n return : if parameters is set correctly -> True")
+    .def("setParam", py::overload_cast<std::string, std::string>(&XYPatternBlock::setParam), " you can set 5 parameters : block_width, block_length, swath_width, angle, id_point \n\n Input : string, string \n Returns : if parameters is set correctly -> True")
+    .def("setParam", py::overload_cast<std::string, double>(&XYPatternBlock::setParam)," you can set 4 parameters : block_width, block_length, swath_width, angle \n\n Input : string, double \n Returns : if parameters is set correctly -> True")
     .def("addIDPoint", &XYPatternBlock::addIDPoint)
     .def("setCoreWidth", &XYPatternBlock::setCoreWidth, py::arg("v"))
     .def("setAutoDrop", &XYPatternBlock::setAutoDrop, py::arg("v"))
@@ -20,9 +20,10 @@ void init_XYPatternBlock(py::module &m) {
     .def("buildCompositeSegList", &XYPatternBlock::buildCompositeSegList, py::arg("osx"), py::arg("osy"))
     
     //Interface for getting information
-    .def("distanceToClosestEntry", &XYPatternBlock::distanceToClosestEntry
-        ,"By default, any_segment is set to true and the shortest distance is calculated by considering the endpoints of ANY of the lane segments. If any_segment is false, only the first,last (or outer) lane segments are considered.\n Returns: -1 if there are any problems or Distance to the shortest entry point.")
-    .def("distanceToCrossAxis", &XYPatternBlock::distanceToCrossAxis)
+    .def("distanceToClosestEntry", &XYPatternBlock::distanceToClosestEntry, py::arg("osx"), py::arg("osy"), py::arg("any_segment")
+        ,"By default, any_segment is set to true and the shortest distance is calculated by considering the endpoints of ANY of the lane segments. If any_segment is false, only the first,last (or outer) lane segments are considered.\n\nInputs : \nosx : x coordinate of the target.\nosy : y coordinate of the target.\n\nReturns : \n-1 (if there are any problems) or Distance to the shortest entry point.")
+    .def("distanceToCrossAxis", &XYPatternBlock::distanceToCrossAxis, py::arg("osx"), py::arg("osy")
+        ,"This function will calculate the distance between target and cross axis.\n\nInputs : \nosx : x coordinate of the target.\nosy : y coordinate of the target.\n\nReturns : \n-1 (if there are any problems) or Distance to the cross axis.")
     
     .def("getLanePoints", &XYPatternBlock::getLanePoints
         ,"Produce a set of points on either side of a center point (cptx, cpty) at angles perpendicular to the given angle.")
