@@ -4,7 +4,6 @@
 namespace py = pybind11;
 void init_XYSegList(py::module &m) {
     py::class_<XYSegList>(m, "XYSegList")
-    //XYSegList() {m_transparency=0.1;}
     .def(py::init())
     .def("add_vertex",py::overload_cast<const XYPoint&, std::string>(&XYSegList::add_vertex),"add vertex with a vertex")
     .def("add_vertex",py::overload_cast<double, double, double, std::string>(&XYSegList::add_vertex),"add vertex with x y")
@@ -57,6 +56,5 @@ void init_XYSegList(py::module &m) {
     .def("closest_vertex",&XYSegList::closest_vertex,"closest_vertex")
     .def("closest_segment",&XYSegList::closest_segment,"closest_segment")
     .def("get_edge_tags",&XYSegList::get_edge_tags,"get_edge_tags")
-    //EdgeTagSet get_edge_tags() const {return(m_edge_tags);}sss
     ;
 }
