@@ -10,11 +10,11 @@ void init_XYPatternBlock(py::module &m) {
     py::class_<XYPatternBlock>(m, "XYPatternBlock")
     .def(py::init())
     //Interface for setting parameters
-    .def("setParam", py::overload_cast<std::string, std::string>(&XYPatternBlock::setParam), " you can set 5 parameters : block_width, block_length, swath_width, angle, id_point \n\n Input : string, string \n Returns : if parameters is set correctly -> True")
-    .def("setParam", py::overload_cast<std::string, double>(&XYPatternBlock::setParam)," you can set 4 parameters : block_width, block_length, swath_width, angle \n\n Input : string, double \n Returns : if parameters is set correctly -> True")
-    .def("addIDPoint", &XYPatternBlock::addIDPoint)
-    .def("setCoreWidth", &XYPatternBlock::setCoreWidth, py::arg("v"))
-    .def("setAutoDrop", &XYPatternBlock::setAutoDrop, py::arg("v"))
+    .def("setParam", py::overload_cast<std::string, std::string>(&XYPatternBlock::setParam), " you can set 5 parameters : block_width, block_length, swath_width, angle, id_point \n\n Input : string, string \n Returns : True if parameters is set correctly ")
+    .def("setParam", py::overload_cast<std::string, double>(&XYPatternBlock::setParam)," you can set 4 parameters : block_width, block_length, swath_width, angle. \n\n Input : string, double \n Returns : True if parameters is set correctly ")
+    .def("addIDPoint", &XYPatternBlock::addIDPoint,"Add a middle point of the block, the pblock may contain several id points, but at least one.\n\n Input : XYPoint ")
+    .def("setCoreWidth", &XYPatternBlock::setCoreWidth, py::arg("v")=true)
+    .def("setAutoDrop", &XYPatternBlock::setAutoDrop, py::arg("v")=true)
 
     //Interface for building components
     .def("buildCompositeSegList", &XYPatternBlock::buildCompositeSegList, py::arg("osx"), py::arg("osy"))
@@ -26,9 +26,9 @@ void init_XYPatternBlock(py::module &m) {
         ,"This function will calculate the distance between target and cross axis.\n\nInputs : \nosx : x coordinate of the target.\nosy : y coordinate of the target.\n\nReturns : \n-1 (if there are any problems) or Distance to the cross axis.")
     
     .def("getLanePoints", &XYPatternBlock::getLanePoints
-        ,"Produce a set of points on either side of a center point (cptx, cpty) at angles perpendicular to the given angle.")
+        ,"Produce a set of points on either side of a center point (cptx, cpty) at angles perpendicular to the given angle. \n\n Returns : a set of points on either side of a center point ")
     .def("getLaneSegments", &XYPatternBlock::getLaneSegments
-        ,"Produce a set of line segments of the given length (blocklen) at the given angle, each with the one of the given points (pts) as the center point.")
+        ,"Produce a set of line segments of the given length (blocklen) at the given angle, each with the one of the given points (pts) as the center point. \n\n Returns : a set of line segments")
     .def("getCompositeSegList", &XYPatternBlock::getCompositeSegList
         ,"Produce a single XYSegList comprised of each of the given XYSegLists. Each given XYSegList should be a single line segment. Each line segment should be parallel and in order.")
     ;
