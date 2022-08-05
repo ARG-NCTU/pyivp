@@ -1,3 +1,6 @@
 [submodule "svn-mirror"]
 	path = svn-mirror
 	url = git@github.com:ARG-NCTU/svn-mirror.git
+[submodule "movingpandas"]
+	path = movingpandas
+	url = git@github.com:ARG-NCTU/movingpandas.git

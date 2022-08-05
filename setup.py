@@ -18,7 +18,7 @@ pyivp = Extension(
 
 setup(
     name='pyivp',
-    version='0.0.4',
+    version='0.0.6',
     author='ARG',
     description='pyivp module',
     long_description='using pybind11 to bind moosivp into python library',
@@ -29,4 +29,5 @@ setup(
     ext_modules=[pyivp],
     zip_safe=False,
     include_package_data=True,
+    options={'bdist_wheel': {'plat_name': 'manylinux2014_x86_64'}}
 )

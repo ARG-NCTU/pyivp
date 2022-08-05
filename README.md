@@ -12,7 +12,14 @@ We intented to use pybind11 to create
 
 For the use of well-established functions.
 
-## Environment and Installation
+## Installation
+
+```
+pip install pyivp -U
+```
+Note : This may not work for some versions of python on some operating systems.
+
+## Environment
 
 We will use Docker to manage the dependencies, which should be minimal.
 Docker mounts the volumn ~/pyivp between the host and container.
