@@ -42,4 +42,3 @@ PYBIND11_MODULE(pyivp, m) {
     init_XYFormatUtilsSegl(m);
 }
 }
-format=lawnmower, x=0, y=0, height=60, width=180, lane_width=15, rows=north-south, startx=20, starty=-300, degs=45
