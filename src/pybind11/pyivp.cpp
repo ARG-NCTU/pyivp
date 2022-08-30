@@ -13,7 +13,7 @@ void init_EdgeTagSet(py::module &);
 void init_XYGrid(py::module &);
 void init_XYSquare(py::module &);
 void init_XYSegment(py::module &);
-
+void init_XYFormatUtilsPoly(py::module &);
 
 namespace ivp {
 
@@ -38,6 +38,6 @@ PYBIND11_MODULE(pyivp, m) {
     init_XYGrid(m);
     init_XYSquare(m);
     init_XYSegment(m);
-
+    init_XYFormatUtilsPoly(m);
 }
 }
