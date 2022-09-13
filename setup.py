@@ -6,9 +6,13 @@ this_dir = os.path.dirname(os.path.abspath(__file__))
 
 pyivp = Extension(
     name='pyivp',
+    # libraries=["-lopencv_highgui", "-lopencv_core"],
     include_dirs=[
         os.path.join(this_dir, 'src/lib_geometry'),
-        os.path.join(this_dir, 'src/lib_mbutil')
+        os.path.join(this_dir, 'src/lib_mbutil'),
+        os.path.join(this_dir, 'src/ptask4_ScanTheCode'),
+        # '/usr/include/opencv2',
+        # '/usr/include/opencv'
     ],
     sources=[
         os.path.join(this_dir, 'src/pybind11', 'XYPoint.cpp'),

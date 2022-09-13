@@ -18,9 +18,10 @@ project(pyivp)
 
 INCLUDE_DIRECTORIES(
 	../../lib_mbutil
-	../../lib_geometry)
+	../../lib_geometry
+  ../../ptask4_ScanTheCode)
 
-INCLUDE_DIRECTORIES(/usr/local/include)
+INCLUDE_DIRECTORIES(/usr/include/opencv2)
 #LINK_DIRECTORIES(/usr/local/lib)
 
 #include_directories("${PYBIND11_DIR}/lib_geometry")
@@ -28,8 +29,10 @@ INCLUDE_DIRECTORIES(/usr/local/include)
 
 file (GLOB SOURCE_FILES "${PYBIND11_DIR}/lib_geometry/*.cpp")
 file (GLOB SOURCE_FILES_MBUTIL "${PYBIND11_DIR}/lib_mbutil/*.cpp")
+file (GLOB SOURCE_FILES_TASK4 "${PYBIND11_DIR}/ptask4_ScanTheCode/*.cpp")
 file (GLOB HEADER_FILES "${PYBIND11_DIR}/lib_geometry/*.h")
 file (GLOB HEADER_FILES_MBUTIL "${PYBIND11_DIR}/lib_mbutil/*.h")
+file (GLOB HEADER_FILES_TASK4 "${PYBIND11_DIR}/ptask4_ScanTheCode/*.h")
 file (GLOB PYTHON_FILES "${PYBIND11_DIR}/pybind11/*.cpp")
 
 find_package(pybind11 REQUIRED)
@@ -40,9 +43,11 @@ pybind11_add_module(pyivp
   ${HEADER_FILES}
   ${SOURCE_FILES_MBUTIL}
   ${HEADER_FILES_MBUTIL}
+  ${SOURCE_FILES_TASK4}
+  ${HEADER_FILES_TASK4}
 )
 
-target_link_libraries(pyivp PUBLIC )
+target_link_libraries(pyivp PUBLIC opencv_core opencv_highgui)
 #target_link_libraries(pyivp PUBLIC geometry mbutil)
 
 install(TARGETS pyivp

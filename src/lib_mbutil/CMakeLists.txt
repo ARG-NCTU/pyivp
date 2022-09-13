@@ -48,3 +48,6 @@ SET(HEADERS
 # Build Library
 ADD_LIBRARY(mbutil ${SRC})
 
+TARGET_LINK_LIBRARIES( mbutil
+   task4
+   )
