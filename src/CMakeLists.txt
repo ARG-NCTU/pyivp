@@ -109,7 +109,7 @@ SET(IVP_NON_GUI_LIBS
 	 #   lib_logutils
 	 lib_mbutil
 	 #   lib_manifest
-   ptask4_ScanTheCode
+  #  ptask4_ScanTheCode
   )
 
 
