@@ -62,13 +62,55 @@ nbdev_clean_nbs
 ```
 Remember to run this command to clear notebooks
 
-## XYPatternBlock
+## Geometry Utilities
+The [documentation](https://oceanai.mit.edu/ivpman/pmwiki/pmwiki.php?n=IvPTools.Geometry) shows how to use functions in ivp.
+### XYPatternBlock
 
 <img width="585" alt="image" src="https://user-images.githubusercontent.com/16217256/171214864-ec5ffca7-fe53-4dbb-ae7d-e058462d8606.png">
 
-## XYHexgon
+```
+import pyivp
+```
+
+```
+pattern = pyivp.string2SegList("format=lawnmower, x=0, y=0, height=60, width=180, lane_width=15, rows=north-south, startx=20, starty=-300, degs=45")
+```
+
+- must use `format=lawnmower` for pattern block.
+- there is 4 entry, and (startx, starty) will decide where is the closest entry.
+
+### XYPolygon
 
 <img width="585" alt="image" src="https://user-images.githubusercontent.com/16217256/171215267-8daf38af-e1a4-4843-8791-481a334c0983.png">
+
+``` 
+import pyivp
+``` 
+
+``` 
+waypointPloy = pyivp.string2ploy("example")
+``` 
+
+- example => `x=0, y=0, format=radial, radius=10, pts=4`
+- you can pass args such as : must have -> [x, y, z, radius, pts], snap, label, active, msg
+- snap means the size of the grid, and the ploy's vertex will stick on the grid.
+``` 
+waypointSeg = waypointPloy.exportSegList(x0, y0)
+``` 
+
+- Build an XYSegList from the poly. Make the first point closest to the x0, y0.
+``` 
+waypointSeg.get_spec_pts()
+``` 
+
+- this will print the vertexs of ploy (clockwise!!) such as 'pts={-1,1:-1,-1:1,-1:1,1}'
+- you can use waypointSeg.reverse() or waypointPloy.reverse() for counterclockwise
+- you can use waypointSeg.is_clockwise() to check.
+``` 
+waypointSeg.get_vx() and waypointSeg.get_vy() 
+```
+
+- with for loop to get every vertex's information.
 
 ## Class Diagram
 
