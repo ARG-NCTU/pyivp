@@ -18,3 +18,4 @@ tags.lock
 
 .ipynb_checkpoints/
 flask/__pycache__/
+*__pycache__*

@@ -9,7 +9,7 @@ build-ivp:
 
 tests:
 	cd src_unit_tests; ./alltest.sh
-	cd src/pytest; python3 test_pattern_block.py
+	cd src/pytest; pytest 
 
 pypi: dist
 	#python3 -m twine upload --skip-existing --repository pypi dist/*.tar.gz
