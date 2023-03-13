@@ -19,3 +19,6 @@ tags.lock
 .ipynb_checkpoints/
 flask/__pycache__/
 *__pycache__*
+examples/cpplabs/pytest/__pycache__/
+src/pytest/__pycache__/
+
