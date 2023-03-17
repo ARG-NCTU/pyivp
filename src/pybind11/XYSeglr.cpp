@@ -28,5 +28,6 @@ void init_XYSeglr(py::module &m) {
     .def("getAvgX", &XYSeglr::getAvgX)
     .def("getAvgY", &XYSeglr::getAvgY)
     .def("getRayLen", &XYSeglr::getRayLen)
+    .def("getHeadSize", &XYSeglr::getHeadSize)
     .def("get_spec", &XYSeglr::get_spec);
 }
