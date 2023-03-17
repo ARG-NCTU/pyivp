@@ -43,7 +43,7 @@ double distPointToPoint(double x1, double y1, double x2, double y2)
   return(hypot((x1-x2), (y1-y2)));
 }
   
-double distPointToPoint(const XYPoint& pt1, const XYPoint& pt2)
+double distPointToPoint1(const XYPoint& pt1, const XYPoint& pt2)
 {
   return(hypot((pt1.get_vx() - pt2.get_vx()), 
 	       (pt1.get_vy() - pt2.get_vy())));

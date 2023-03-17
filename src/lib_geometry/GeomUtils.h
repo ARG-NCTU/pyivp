@@ -33,7 +33,7 @@
 // Determines the distance between two points
 double distPointToPointXXX(double x1, double y1, double x2, double y2);
 double distPointToPoint(double x1, double y1, double x2, double y2);
-double distPointToPoint(const XYPoint& pt1, const XYPoint& pt2);
+double distPointToPoint1(const XYPoint& pt1, const XYPoint& pt2);
 
 // Determine the distance from a line segment to a point (px,py)
 double distPointToSeg(double x1, double y1, double x2, 
