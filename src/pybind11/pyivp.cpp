@@ -15,6 +15,9 @@ void init_XYSquare(py::module &);
 void init_XYSegment(py::module &);
 void init_XYFormatUtilsPoly(py::module &);
 void init_XYFormatUtilsSegl(py::module &);
+void init_GeomUtils(py::module &);
+void init_XYSeglr(py::module &);
+void init_XYVector(py::module &);
 // void init_Detector(py::module &);
 // void init_FindColor(py::module &);
 // void init_LightBuoyDetector(py::module &);
@@ -43,7 +46,9 @@ PYBIND11_MODULE(pyivp, m) {
     init_XYSegment(m);
     init_XYFormatUtilsPoly(m);
     init_XYFormatUtilsSegl(m);
-
+    init_GeomUtils(m);
+    init_XYSeglr(m);
+    init_XYVector(m);
     // For Light Buoy Detection
     // init_Detector(m);
     // init_FindColor(m);
