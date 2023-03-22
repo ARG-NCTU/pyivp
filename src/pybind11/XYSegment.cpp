@@ -20,7 +20,7 @@ void init_XYSegment(py::module &m) {
     .def("get_x2", &XYSegment::get_x2)
     .def("get_y1", &XYSegment::get_y1)
     .def("get_y2", &XYSegment::get_y2)
-    .def("getRAng12", &XYSegment::getRAng12)
-    .def("getRAng21", &XYSegment::getRAng21)
+    .def("get_rang12", &XYSegment::getRAng12)
+    .def("get_rang21", &XYSegment::getRAng21)
     .def("get_spec", &XYSegment::get_spec, py::arg("vertex_precision") = 1);
 }

@@ -6,7 +6,7 @@
 namespace py = pybind11;
 
 void init_XYFormatUtilsPoly(py::module &m) {
-    m.def("string2Poly", &string2Poly);
-    m.def("stringStandard2Poly", &stringStandard2Poly);
-    m.def("stringRadial2Poly", &stringRadial2Poly);
+    m.def("string2poly", &string2Poly);
+    m.def("string_standard2poly", &stringStandard2Poly);
+    m.def("string_radial2poly", &stringRadial2Poly);
 }

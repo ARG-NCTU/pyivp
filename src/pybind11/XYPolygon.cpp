@@ -446,7 +446,7 @@ void init_XYPolygon(py::module &m)
         ry: y coord of the closest point.
       )")
 
-      .def("exportSegList", &XYPolygon::exportSegList, py::arg("x") = 0, py::arg("y") = 0,
+      .def("export_seglist", &XYPolygon::exportSegList, py::arg("x") = 0, py::arg("y") = 0,
            R"(
       Build an XYSegList from the polygon. Make the first point in the XYSegList the point in the polygon that is closest to the x,y point.
 
@@ -458,7 +458,7 @@ void init_XYPolygon(py::module &m)
         The XYSegList built from the polygon.
       )")
 
-      .def("crossProductSettle", &XYPolygon::crossProductSettle,
+      .def("cross_product_settle", &XYPolygon::crossProductSettle,
            R"(
       If this polygon is nonconvex, try to make it convex by repeatedly removing middle points of the three-point group that is most colinear in the polygon.
 

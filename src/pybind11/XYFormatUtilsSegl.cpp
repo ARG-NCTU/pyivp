@@ -6,6 +6,6 @@
 namespace py = pybind11;
 
 void init_XYFormatUtilsSegl(py::module &m) {
-    m.def("string2SegList", &string2SegList);
+    m.def("string2_seglist", &string2SegList);
     
 }
