@@ -29,40 +29,40 @@ def test_constructor_valid_tag():
 
 def test_getSpec():
     et = EdgeTag(0, 1, "tag")
-    assert et.getSpec() == "0:1:tag"
+    assert et.get_spec() == "0:1:tag"
 
-def test_setOnSpec_invalid():
+def test_set_on_spec_invalid():
     et = EdgeTag()
-    assert et.setOnSpec("invalid_spec") == False
-
-    et = EdgeTag()
-    assert et.setOnSpec("0:1") == False
+    assert et.set_on_spec("invalid_spec") == False
 
     et = EdgeTag()
-    assert et.setOnSpec("0::tag") == False
+    assert et.set_on_spec("0:1") == False
 
     et = EdgeTag()
-    assert et.setOnSpec("0:1:") == False
+    assert et.set_on_spec("0::tag") == False
 
     et = EdgeTag()
-    assert et.setOnSpec(":0:1:tag") == False
+    assert et.set_on_spec("0:1:") == False
 
     et = EdgeTag()
-    assert et.setOnSpec("0.5:1:tag") == True
+    assert et.set_on_spec(":0:1:tag") == False
 
     et = EdgeTag()
-    assert et.setOnSpec("0:1.5:tag") == True
+    assert et.set_on_spec("0.5:1:tag") == True
 
-def test_setOnSpec_valid():
     et = EdgeTag()
-    assert et.setOnSpec("0:1:tag") == True
+    assert et.set_on_spec("0:1.5:tag") == True
+
+def test_set_on_spec_valid():
+    et = EdgeTag()
+    assert et.set_on_spec("0:1:tag") == True
     assert et.valid() == True
-    assert et.getSpec() == "0:1:tag"
+    assert et.get_spec() == "0:1:tag"
 
     et = EdgeTag()
-    assert et.setOnSpec("1:0:tag") == True
+    assert et.set_on_spec("1:0:tag") == True
     assert et.valid() == True
-    assert et.getSpec() == "1:0:tag"
+    assert et.get_spec() == "1:0:tag"
 
 def test_matches():
     et = EdgeTag(0, 1, "tag")

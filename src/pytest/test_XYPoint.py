@@ -52,10 +52,10 @@ def test_spec_digits():
     assert point.get_spec() == "x=1.2345,y=2.3456,z=3.4567"
 
 
-def test_projectPt():
+def test_project_pt():
     point1 = XYPoint(1, 2)
     point2 = XYPoint(3, 4)
-    point2.projectPt(point1, 45, 2)
+    point2.project_pt(point1, 45, 2)
     assert round(point2.x(), 2) == 2.41
     assert round(point2.y(), 2) == 3.41
     assert point2.z() == 0
