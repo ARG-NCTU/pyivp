@@ -124,10 +124,8 @@ RUN echo "conda activate movingpandas" >> ~/.bashrc
 SHELL ["/bin/bash", "--login", "-c"]
 
 # conda install nbdev in movingpandas environment
-RUN conda install -n movingpandas -c fastai nbdev -y
+RUN conda install -n movingpandas -c fastai nbdev datasets huggingface_hub  -y
 
-RUN pip3 install datasets \
-                huggingface_hub
 ##################################### setting #####################################
 
 RUN echo "${USER} ALL=(ALL)  NOPASSWD: ALL" > /etc/sudoers
