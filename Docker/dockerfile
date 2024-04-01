@@ -108,12 +108,13 @@ ENV PATH "$PATH:${HOME}/pyivp/svn-mirror/bin"
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
     chmod +x Miniconda3-latest-Linux-x86_64.sh 
 
-RUN ./Miniconda3-latest-Linux-x86_64.sh -b -p
+RUN ./Miniconda3-latest-Linux-x86_64.sh -b 
 
 # add conda to path
 ENV PATH "$PATH:${HOME}/miniconda3/bin"
 
 # create the environment
+RUN echo 1
 COPY environment.yml .
 RUN conda env create -f environment.yml
 
@@ -125,11 +126,13 @@ SHELL ["/bin/bash", "--login", "-c"]
 # conda install nbdev in movingpandas environment
 RUN conda install -n movingpandas -c fastai nbdev -y
 
-
+RUN pip3 install datasets \
+                huggingface_hub
 ##################################### setting #####################################
 
-RUN chown -R ${USER}:${USER} ${HOME}/
-RUN echo "kl ALL=(ALL)  ALL" > /etc/sudoers
+RUN echo "${USER} ALL=(ALL)  NOPASSWD: ALL" > /etc/sudoers
+# RUN chown -R ${USER}:${USER} ${HOME}/
+
 
 COPY default /etc/nginx/sites-enabled/default
 
