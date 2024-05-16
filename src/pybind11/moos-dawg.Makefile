@@ -1,6 +1,6 @@
 
 all:
-	mkdir build; cd build; cmake ../moos-dawg-2024; make; make install
+	mkdir build; cd build; cmake ../moos-dawg; make; make install
 
 clean:
 	rm -rf build
