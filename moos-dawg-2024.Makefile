@@ -5,7 +5,7 @@ all: build-ivp tests
 build-ivp:
 	make -C src
 	make -C src_unit_tests 
-	make -C src/pybind11 -f moos-dawg.Makefile
+	make -C src/pybind11 -f moos-dawg-2024.Makefile
 
 tests:
 	cd src_unit_tests; ./alltest.sh
@@ -21,4 +21,4 @@ dist: build-ivp
 clean:
 	make -C src clean
 	make -C  src_unit_tests clean
-	make -C src/pybind11 clean -f moos-dawg.Makefile
+	make -C src/pybind11 clean -f moos-dawg-2024.Makefile

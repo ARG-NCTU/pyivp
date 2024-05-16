@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(PYTHON_LIBRARY_DIR "/usr/local/lib/python3.8/dist-packages")
 set(PYTHON_EXECUTABLE "/usr/bin/python3")
-set(PYBIND11_DIR "/home/moos-dawg/pyivp/src")
+set(PYBIND11_DIR "/home/moos-dawg-2024/pyivp/src")
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
