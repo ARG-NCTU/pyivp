@@ -1,0 +1,26 @@
+{
+    "name": "pyivp-dev",
+    "image": "argnctu/pyivp:latest",
+    "runArgs": [
+      "--rm",
+      "--net=host",
+      "--privileged",
+      "--security-opt", "seccomp=unconfined",
+      "-e", "DISPLAY=${env:DISPLAY}",
+      "-e", "QT_X11_NO_MITSHM=1",
+      "-e", "XAUTHORITY=/tmp/.docker.xauth",
+      "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
+      "-v", "/tmp/.docker.xauth:/tmp/.docker.xauth",
+      "-v", "/dev:/dev",
+      "-v", "/etc/localtime:/etc/localtime:ro",
+      "-v", "/var/run/docker.sock:/var/run/docker.sock"
+    ],
+    "workspaceMount": "source=${localEnv:HOME}/pyivp,target=/home/arg/pyivp,type=bind",
+    "workspaceFolder": "/home/arg/pyivp",
+    "remoteUser": "root",
+    "customizations": {
+      "vscode": {
+        "extensions": ["ms-python.python"]
+      }
+    }
+  }
